@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baby Name Finder</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <h1>Baby Name Finder</h1>
+        <p>Gentle ideas for your growing family</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="favorites.html">Favorites</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <img src="baby_image.jpg" alt="Smiling baby" class="intro-image">
+      <div class="intro-text">
+        <h2>Search For Your Favorite Baby Name</h2>
+        <p>
+          Not sure what to name your next baby? Discover meaningful, modern, and classic baby names with their origins and meanings. 
+          Use the filters to explore, or search directly. Click the heart next to any name to save it to your favorites list. 
+          You can view your saved favorites by selecting "Favorites" at the top of the page.
+        </p>
+      </div>
+    </section>
+    <section class="hero">
+      <h2 class="random-name" id="randomName">Loading...</h2>
+      <button id="surpriseBtn" class="btn">Surprise me</button>
+
+      <div class="search-area">
+        <input id="searchInput" type="text" placeholder="Search names...">
+        <ul id="suggestList" class="suggestions"></ul>
+      </div>
+    </section>
+
+    <section class="filters">
+      <select id="genderFilter">
+        <option value="">Gender</option>
+        <option value="female">Girl</option>
+        <option value="male">Boy</option>
+        <option value="unisex">Unisex</option>
+      </select>
+
+      <select id="lengthFilter">
+        <option value="">Length</option>
+        <option value="short">3–4 letters</option>
+        <option value="medium">5–7 letters</option>
+        <option value="long">8+ letters</option>
+      </select>
+
+      <select id="firstFilter">
+        <option value="">First Letter</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="G">G</option>
+        <option value="H">H</option>
+        <option value="I">I</option>
+        <option value="J">J</option>
+        <option value="K">K</option>
+        <option value="L">L</option>
+        <option value="M">M</option>
+        <option value="N">N</option>
+        <option value="O">O</option>
+        <option value="P">P</option>
+        <option value="Q">Q</option>
+        <option value="R">R</option>
+        <option value="S">S</option>
+        <option value="T">T</option>
+        <option value="U">U</option>
+        <option value="V">V</option>
+        <option value="W">W</option>
+        <option value="X">X</option>
+        <option value="Y">Y</option>
+        <option value="Z">Z</option>
+      </select>
+
+      <select id="sortFilter">
+        <option value="">Sort By</option>
+        <option value="asc">A-Z</option>
+        <option value="desc">Z-A</option>
+        </select>
+    </section>
+
+    <section class="name-grid" id="nameGrid"></section>
+  </main>
+
+  <footer class="footer">
+    <p>© Baby Name Finder</p>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

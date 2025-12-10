@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Site Plan — Baby Name Finder</title>
+  <meta name="description" content="Site plan for Baby Name Finder — a pastel-themed site to explore, filter, favorite and compare baby names." />
+  <meta name="author" content="Your Name" />
+  <link rel="stylesheet" href="styles/site-plan.css" />
+  <link rel="icon" href="recipe-book.png" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1">
+            <stop offset="0" stop-color="#ffdfea"/>
+            <stop offset="1" stop-color="#e6fff4"/>
+          </linearGradient>
+        </defs>
+        <rect x="4" y="4" width="92" height="92" rx="18" fill="url(#g)"/>
+        <g transform="translate(20,22)" fill="#6a6a6a">
+          <circle cx="14" cy="12" r="8" fill="#ffd7d7" />
+          <rect x="32" y="10" width="26" height="12" rx="3" fill="#c6f0e6" />
+          <path d="M4 34 q20 12 36 0" stroke="#ffd7d7" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <div class="brand-text">
+        <h1>Baby Name Finder</h1>
+        <p class="tag">gentle ideas • favorites • compare</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="overview card">
+      <h2>Purpose</h2>
+      <p>
+        Baby Name Finder helps expecting parents discover, filter, and save baby name ideas. The site provides meanings, origins, popularity, and simple tools to compare and favorite names.
+      </p>
+      <h3>Audience</h3>
+      <p>
+        Expecting parents, family members, and anyone helping choose baby names. Audience values simple UX, cute pastel visuals, quick search and privacy (favorites stored locally).
+      </p>
+    </section>
+
+    <section class="dynamic card">
+      <h2>Dynamic Elements</h2>
+      <ul>
+        <li>Random name generator (uses a function that picks a random index).</li>
+        <li>Filter system (gender, length, origin, popularity) using Array.filter.</li>
+        <li>Autosuggest search that shows possible names as you type.</li>
+        <li>Favorites saved in localStorage (add/remove favorites).</li>
+        <li>Compare view to place two names side-by-side.</li>
+        <li>“Battle” mode (pick one of two random names) to build favorites by selection.</li>
+        <li>Module structure: ES module for name dataset, main script for UI logic.</li>
+      </ul>
+
+      <h3>Required JS/Technical Items</h3>
+      <ul>
+        <li>Objects for each name (name, gender, meaning, origin, popularity, tags).</li>
+        <li>ES Module with exported `names` array.</li>
+        <li>Array methods used: forEach, map, filter, find, sort.</li>
+        <li>DOM interactions: querySelector, event listeners, classList, innerHTML.</li>
+        <li>Conditional logic to handle filtering, favorites, and UI states.</li>
+      </ul>
+    </section>
+
+    <section class="logo-colors card">
+      <h2>Logo • Colors • Fonts</h2>
+      <div class="specs">
+        <div>
+          <h4>Logo</h4>
+          <p>Soft square icon with pastel gradient and simple marks representing name tags.</p>
+        </div>
+        <div>
+          <h4>Colors</h4>
+          <ul>
+            <li><strong>Primary:</strong> Mint — #C6F0E6</li>
+            <li><strong>Accent:</strong> Baby Pink — #FFD7D7</li>
+            <li><strong>Soft:</strong> Cream — #FFF7EA</li>
+            <li><strong>Text:</strong> Slate — #2F3A3A</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Fonts</h4>
+          <p>Primary: Inter or system sans-serif for body. Headings use a friendly rounded font such as "Nunito" or system fallback.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content card">
+      <h2>Pages & Content</h2>
+      <h3>Home (index.html)</h3>
+      <ul>
+        <li>Hero with random name generator and "Surprise me" button</li>
+        <li>Search bar with autosuggest</li>
+        <li>Filter controls: gender, length, first letter, style (classic/modern)</li>
+        <li>Grid of name cards (image placeholder, name, meaning, tags, favorite button)</li>
+      </ul>
+
+      <h3>Child page: Favorites (favorites.html)</h3>
+      <ul>
+        <li>List of favorited names stored in localStorage</li>
+        <li>Option to remove or export favorites (JSON copy)</li>
+      </ul>
+
+      <h3>Child page: Compare (compare.html)</h3>
+      <ul>
+        <li>Choose two names to compare meaning, origin, popularity</li>
+        <li>Accessible layout, keyboard navigable</li>
+      </ul>
+    </section>
+
+    <section class="data card">
+      <h2>Data & Example Objects</h2>
+      <pre class="code">
+[
+  {
+    "name":"Avery",
+    "gender":"unisex",
+    "meaning":"ruler of the elves",
+    "origin":"English",
+    "popularity": 420,
+    "tags":["modern","soft"],
+    "yearTrend": "stable"
+  },
+  {
+    "name":"Evelyn",
+    "gender":"female",
+    "meaning":"wished for child",
+    "origin":"English",
+    "popularity": 24,
+    "tags":["classic","vintage"]
+  }
+]
+      </pre>
+      <p>Dataset will be in <code>names.mjs</code> exported as default array.</p>
+    </section>
+
+    <section class="wireframes card">
+      <h2>Wireframes</h2>
+      <div class="wf-grid">
+        <figure>
+          <figcaption>Home (mobile)</figcaption>
+          <svg viewBox="0 0 360 640" class="wireframe" role="img" aria-label="Home page wireframe">
+            <rect x="8" y="8" width="344" height="624" rx="12" fill="#fff" stroke="#e6e6e6"/>
+            <rect x="20" y="22" width="120" height="36" rx="6" fill="#f6f6f6"/>
+            <rect x="152" y="22" width="180" height="36" rx="6" fill="#ffd7d7"/>
+            <rect x="20" y="74" width="320" height="130" rx="10" fill="#fff" stroke="#f0f0f0"/>
+            <rect x="28" y="96" width="140" height="28" rx="6" fill="#e6fff4"/>
+            <rect x="176" y="120" width="162" height="28" rx="6" fill="#fff7ea"/>
+            <rect x="20" y="220" width="320" height="80" rx="8" fill="#fff" stroke="#f0f0f0"/>
+            <rect x="20" y="310" width="320" height="260" rx="10" fill="#fff" stroke="#f0f0f0"/>
+            <text x="28" y="56" font-size="10" fill="#8b8b8b">Random name • filters • search</text>
+          </svg>
+        </figure>
+
+        <figure>
+          <figcaption>Child — Compare (desktop)</figcaption>
+          <svg viewBox="0 0 720 480" class="wireframe" role="img" aria-label="Compare page wireframe">
+            <rect x="8" y="8" width="704" height="464" rx="10" fill="#fff" stroke="#e6e6e6"/>
+            <rect x="28" y="24" width="664" height="64" rx="8" fill="#fff7ea"/>
+            <rect x="28" y="104" width="320" height="328" rx="10" fill="#fff" stroke="#f0f0f0"/>
+            <rect x="372" y="104" width="320" height="328" rx="10" fill="#fff" stroke="#f0f0f0"/>
+            <text x="36" y="58" font-size="12" fill="#6a6a6a">Choose two names to compare</text>
+            <text x="48" y="140" font-size="11" fill="#6a6a6a">Name • Meaning • Origin • Popularity</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <section class="requirements card">
+      <h2>Accessibility & Performance Plan</h2>
+      <ul>
+        <li>Use semantic HTML and proper aria labels for interactive widgets.</li>
+        <li>Keyboard accessible controls (filters, favorites, compare).</li>
+        <li>Images use <code>alt</code> text; decorative SVGs marked appropriately.</li>
+        <li>Lazy-load large images and keep asset sizes small for Lighthouse performance.</li>
+      </ul>
+
+      <h3>Deliverables</h3>
+      <ol>
+        <li>site-plan.html (this page)</li>
+        <li>index.html with app UI</li>
+        <li>favorites.html and compare.html</li>
+        <li>styles/ (CSS) and scripts/ (ES modules + main.js)</li>
+        <li>Hosted on GitHub Pages under /wdd131/yourfolder</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Site plan created for WDD131 final project.</p>
+    <nav>
+      <a href="index.html">Home (mock)</a> |
+      <a href="favorites.html">Favorites (mock)</a> |
+      <a href="compare.html">Compare (mock)</a>
+    </nav>
+  </footer>
+</body>
+</html>
