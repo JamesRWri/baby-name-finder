@@ -22,6 +22,7 @@
   </header>
 
   <main class="container">
+
     <section class="intro">
       <img src="baby_image.jpg" alt="Smiling baby" class="intro-image">
       <div class="intro-text">
@@ -33,6 +34,7 @@
         </p>
       </div>
     </section>
+
     <section class="hero">
       <h2 class="random-name" id="randomName">Loading...</h2>
       <button id="surpriseBtn" class="btn">Surprise me</button>
@@ -43,7 +45,8 @@
       </div>
     </section>
 
-    <section class="filters">
+    <!-- Replaced section with div to satisfy validator -->
+    <div class="filters">
       <label for="genderFilter" class="visually-hidden">Select Gender</label>
       <select id="genderFilter">
         <option value="">Gender</option>
@@ -96,10 +99,12 @@
         <option value="">Sort By</option>
         <option value="asc">A-Z</option>
         <option value="desc">Z-A</option>
-        </select>
-    </section>
+      </select>
+    </div>
 
-    <section class="name-grid" id="nameGrid"></section>
+    <!-- Replaced section with div to satisfy validator -->
+    <div class="name-grid" id="nameGrid"></div>
+
   </main>
 
   <footer class="footer">
@@ -109,4 +114,3 @@
   <script type="module" src="main.js"></script>
 </body>
 </html>
-
